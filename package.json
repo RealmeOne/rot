@@ -1,0 +1,14 @@
+{
+  "name": "realme-one-token",
+  "version": "0.1.0",
+  "description": "Realme.One token",
+  "main": "index.js",
+  "repository": "https://github.com/RealmeOne/rot-contract.git",
+  "author": "ashimida6",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "ethereumjs-testrpc": "^6.0.3",
+    "truffle": "^4.1.8"
+  }
+}
