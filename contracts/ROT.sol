@@ -97,14 +97,14 @@ contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
     event Unfreeze(address indexed from, uint256 value);
 
     function ROT() public {
-        name = "CodePress Token";
-        symbol = "CDS";
+        name = "Realme.One Token";
+        symbol = "ROT";
         decimals = 18;
-        totalSupply = 800000000 * 10 ** uint256(decimals);
+        totalSupply = 1000000000 * 10 ** uint256(decimals);
         balances[msg.sender] = totalSupply;
     }
 
-    // cds part
+    // freeze part
     function freeze(address _addr, uint256 _value) public onlyOwner returns (bool success) {
         require(balances[_addr] >= _value);
         require(_value > 0);
