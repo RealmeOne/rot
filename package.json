@@ -8,7 +8,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "ethereumjs-testrpc": "^6.0.3",
+    "ganache-cli": "^6.1.6",
     "truffle": "^4.1.8"
   }
 }

@@ -2,7 +2,7 @@
 
 ## ERC20
 
-CodePress Token is ERC20 based
+Token is ERC20 based
 
 ## Etherscan
 
@@ -16,7 +16,7 @@ CodePress Token is ERC20 based
 ## Run Test
 
 ```bash
-yarn run testrpc
+yarn run ganache-cli
 yarn truffle compile
 yarn truffle test
 ```

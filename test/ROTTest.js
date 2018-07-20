@@ -6,7 +6,7 @@ contract('ROT', async(accounts) => {
     it("test create", async() => {
         let instance = await ROT.deployed()
         let balance = await instance.balanceOf.call(accounts[0])
-        assert.equal(8 * (10 ** 8) * (10 ** 18), balance.valueOf(), "0.8B wasn't in the first account")
+        assert.equal(10 * (10 ** 8) * (10 ** 18), balance.valueOf(), "0.8B wasn't in the first account")
     })
 
     it("test transfer", async() => {

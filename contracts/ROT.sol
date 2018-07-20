@@ -1,10 +1,10 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.24;
 
 
 contract Owned {
     address public owner;
 
-    function Owned() public {
+    constructor() public {
         owner = msg.sender;
     }
 
@@ -96,7 +96,7 @@ contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
     event Freeze(address indexed from, uint256 value);
     event Unfreeze(address indexed from, uint256 value);
 
-    function ROT() public {
+    constructor() public {
         name = "Realme.One Token";
         symbol = "ROT";
         decimals = 18;
