@@ -8,7 +8,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "ganache-cli": "^6.1.6",
-    "truffle": "^4.1.8"
+    "ganache-cli": "^6.1.8",
+    "truffle": "^4.1.14"
   }
 }

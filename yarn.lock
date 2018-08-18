@@ -22,8 +22,8 @@ browser-stdout@1.3.0:
   resolved "http://registry.npm.taobao.org/browser-stdout/download/browser-stdout-1.3.0.tgz#f351d32969d32fa5d7a5567154263d928ae3bd1f"
 
 buffer-from@^1.0.0:
-  version "1.1.0"
-  resolved "http://registry.npm.taobao.org/buffer-from/download/buffer-from-1.1.0.tgz#87fcaa3a298358e0ade6e442cfce840740d1ad04"
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/buffer-from/download/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
 
 builtin-modules@^1.0.0:
   version "1.1.1"
@@ -98,9 +98,9 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/fs.realpath/download/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
-ganache-cli@^6.1.6:
-  version "6.1.6"
-  resolved "http://registry.npm.taobao.org/ganache-cli/download/ganache-cli-6.1.6.tgz#99b500a25f571271a6978ef3f9c9c53e1a3854f0"
+ganache-cli@^6.1.8:
+  version "6.1.8"
+  resolved "http://registry.npm.taobao.org/ganache-cli/download/ganache-cli-6.1.8.tgz#49a8a331683a9652183f82ef1378d17e1814fcd3"
   dependencies:
     source-map-support "^0.5.3"
 
@@ -364,8 +364,8 @@ solc@0.4.24:
     yargs "^4.7.1"
 
 source-map-support@^0.5.3:
-  version "0.5.6"
-  resolved "http://registry.npm.taobao.org/source-map-support/download/source-map-support-0.5.6.tgz#4435cee46b1aab62b8e8610ce60f788091c51c13"
+  version "0.5.8"
+  resolved "http://registry.npm.taobao.org/source-map-support/download/source-map-support-0.5.8.tgz#04f5581713a8a65612d0175fbf3a01f80a162613"
   dependencies:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
@@ -422,17 +422,17 @@ supports-color@4.4.0:
   dependencies:
     has-flag "^2.0.0"
 
-truffle@^4.1.8:
-  version "4.1.13"
-  resolved "http://registry.npm.taobao.org/truffle/download/truffle-4.1.13.tgz#bf27586988b4ff84563edfbf32b47941408a76ad"
+truffle@^4.1.14:
+  version "4.1.14"
+  resolved "http://registry.npm.taobao.org/truffle/download/truffle-4.1.14.tgz#8d2c298e29abf9b1e486e44ff9faca6d34bb9030"
   dependencies:
     mocha "^4.1.0"
     original-require "1.0.1"
     solc "0.4.24"
 
 validate-npm-package-license@^3.0.1:
-  version "3.0.3"
-  resolved "http://registry.npm.taobao.org/validate-npm-package-license/download/validate-npm-package-license-3.0.3.tgz#81643bcbef1bdfecd4623793dc4648948ba98338"
+  version "3.0.4"
+  resolved "http://registry.npm.taobao.org/validate-npm-package-license/download/validate-npm-package-license-3.0.4.tgz#fc91f6b9c7ba15c857f4cb2c5defeec39d4f410a"
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
