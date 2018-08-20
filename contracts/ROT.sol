@@ -99,8 +99,8 @@ contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
     constructor() public {
         name = "Realme.One Token";
         symbol = "ROT";
-        decimals = 18;
-        totalSupply = 1000000000 * 10 ** uint256(decimals);
+        decimals = 8;
+        totalSupply = 800000000 * 10 ** uint256(decimals);
         balances[msg.sender] = totalSupply;
     }
 
