@@ -96,6 +96,8 @@ contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
     event Freeze(address indexed from, uint256 value);
     event Unfreeze(address indexed from, uint256 value);
 
+    event Burn(address indexed burner, uint256 value);
+
     constructor() public {
         name = "Realme.One Token";
         symbol = "ROT";
@@ -125,6 +127,24 @@ contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
 
     function frozenOf(address _owner) public view returns (uint256 balance) {
         return frozen[_owner];
+    }
+
+    // mint part
+    function mint(address _addr, uint256 _value) onlyOwner public returns (bool success) {
+        require(_addr != 0);
+        totalSupply = add(totalSupply, _value);
+        balances[_addr] = add(balances[_addr], _value);
+        emit Transfer(address(0), _addr, _value);
+        return true;
+    }
+
+    // burn part
+    function burn(uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        totalSupply = sub(totalSupply, _value);
+        balances[msg.sender] = sub(balances[msg.sender], _value);
+        emit Burn(msg.sender, _value);
+        return true;
     }
     
     // erc20 part
