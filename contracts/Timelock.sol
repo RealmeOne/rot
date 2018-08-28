@@ -1,12 +1,12 @@
 pragma solidity ^0.4.24;
 
-interface ROT {
+interface ROToken {
     function transfer(address _to, uint256 _value) external returns (bool success);
     function balanceOf(address _owner) external view returns (uint256 balance);
 }
 
 contract Timelock {
-    ROT public token;
+    ROToken public token;
     address public beneficiary;
     uint256 public releaseTime;
 
@@ -19,7 +19,7 @@ contract Timelock {
     ) public {
         require(_releaseTime > now);
         require(_beneficiary != address(0));
-        token = ROT(_token);
+        token = ROToken(_token);
         beneficiary = _beneficiary;
         releaseTime = _releaseTime;
     }

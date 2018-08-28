@@ -6,7 +6,7 @@ contract('ROT', async(accounts) => {
     it("test create", async() => {
         let instance = await ROT.deployed()
         let balance = await instance.balanceOf.call(accounts[0])
-        assert.equal(10 * (10 ** 8) * (10 ** 18), balance.valueOf(), "0.8B wasn't in the first account")
+        assert.equal(8 * (10 ** 8) * (10 ** 8), balance.valueOf(), "0.8B wasn't in the first account")
     })
 
     it("test transfer", async() => {
@@ -32,7 +32,7 @@ contract('ROT', async(accounts) => {
         assert.equal(user2Balance.toNumber(), 0, "User 2 balance wasn't correctly")
         assert.equal(user1BalanceEnd.toNumber(), amount, "User 1 balance wasn't correctly")
         assert.equal(user2BalanceEnd.toNumber(), amount, "User 2 balance wasn't correctly")
-        assert.equal(ownerBalanceEnd.toNumber(), ownerBalance.toNumber() - amount, "User 2 balance wasn't correctly")
+        assert.equal(ownerBalanceEnd.toNumber(), ownerBalance.toNumber() - 2 * amount, "User 2 balance wasn't correctly")
     })
 
     it("test transfer overflow", async() => {
