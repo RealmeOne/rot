@@ -69,8 +69,7 @@ contract Pausable is Owned {
 
 
 contract EIP20Interface {
-    uint256 public totalSupply;
-
+    function totalSupply() public view returns (uint256);
     function balanceOf(address _owner) public view returns (uint256 balance);
     function transfer(address _to, uint256 _value) public returns (bool success);
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success);
@@ -83,11 +82,10 @@ contract EIP20Interface {
 
 
 contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
+    uint256 private totalSupply_;
     string public name;
     string public symbol;
     uint8 public decimals;
-
-    uint8 public version = 1;
     
     mapping (address => uint256) public balances;
     mapping (address => uint256) public frozen;
@@ -102,8 +100,8 @@ contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
         name = "Realme.One Token";
         symbol = "ROT";
         decimals = 8;
-        totalSupply = 800000000 * 10 ** uint256(decimals);
-        balances[msg.sender] = totalSupply;
+        totalSupply_ = 800000000 * 10 ** uint256(decimals);
+        balances[msg.sender] = totalSupply_;
     }
 
     // freeze part
@@ -132,7 +130,7 @@ contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
     // mint part
     function mint(address _addr, uint256 _value) onlyOwner public returns (bool success) {
         require(_addr != 0);
-        totalSupply = add(totalSupply, _value);
+        totalSupply_ = add(totalSupply_, _value);
         balances[_addr] = add(balances[_addr], _value);
         emit Transfer(address(0), _addr, _value);
         return true;
@@ -141,13 +139,17 @@ contract ROT is Owned, SafeMath, Pausable, EIP20Interface {
     // burn part
     function burn(uint256 _value) public returns (bool success) {
         require(balances[msg.sender] >= _value);
-        totalSupply = sub(totalSupply, _value);
+        totalSupply_ = sub(totalSupply_, _value);
         balances[msg.sender] = sub(balances[msg.sender], _value);
         emit Burn(msg.sender, _value);
         return true;
     }
     
     // erc20 part
+    function totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+
     function balanceOf(address _owner) public view returns (uint256 balance) {
         return balances[_owner];
     }
