@@ -3,10 +3,12 @@ var ROT = artifacts.require('./ROT.sol')
 
 contract('ROT', async(accounts) => {
 
+    let totalSupply_ = 8 * (10 ** 8) * (10 ** 8)
+
     it("test create", async() => {
         let instance = await ROT.deployed()
         let balance = await instance.balanceOf.call(accounts[0])
-        assert.equal(8 * (10 ** 8) * (10 ** 8), balance.valueOf(), "0.8B wasn't in the first account")
+        assert.equal(totalSupply_, balance.toNumber(), "total supply is wrong")
     })
 
     it("test transfer", async() => {
