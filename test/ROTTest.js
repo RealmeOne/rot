@@ -3,7 +3,7 @@ var ROT = artifacts.require('./ROT.sol')
 
 contract('ROT', async(accounts) => {
 
-    let totalSupply_ = 8 * (10 ** 8) * (10 ** 8)
+    let totalSupply_ = 10 * (10 ** 8) * (10 ** 8)
 
     it("test create", async() => {
         let instance = await ROT.deployed()
