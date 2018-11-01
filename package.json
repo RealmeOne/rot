@@ -1,11 +1,11 @@
 {
-  "name": "realme-one-token",
+  "name": "rot",
   "version": "0.1.0",
-  "description": "Realme.One token",
+  "description": "realme.one token",
   "main": "index.js",
-  "repository": "https://github.com/RealmeOne/rot-contract.git",
+  "repository": "https://github.com/realmeone/rot-contract.git",
   "author": "ashimida6",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "ganache-cli": "^6.1.8",
